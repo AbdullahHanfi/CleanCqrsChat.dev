@@ -1,4 +1,4 @@
-namespace CleanCqrsChat.dev.Domain.Entities;
+namespace Domain.Entities;
 
 using Enums;
 
@@ -13,9 +13,8 @@ public class Chat {
     public DateTime UpdatedAt { get; set; }
     public DateTime? LastMessageAt { get; set; }
     public bool IsActive { get; set; } = true;
-
-    // Navigation properties
-    public User Creator { get; set; }
+    public PrivacyLevel Privacy { get; set; } = PrivacyLevel.Private;
+    
+    // EMBEDDED DATA
     public ICollection<ChatMember> Members { get; set; } = new List<ChatMember>();
-    public ICollection<Message> Messages { get; set; } = new List<Message>();
 }

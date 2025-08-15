@@ -1,4 +1,4 @@
-namespace CleanCqrsChat.dev.Domain.Enums;
+namespace Domain.Enums;
 
 public enum UserStatus {
     Online,
