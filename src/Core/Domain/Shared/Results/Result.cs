@@ -1,4 +1,4 @@
-namespace Domain.Shared;
+namespace Domain.Shared.Results;
 
 public class Result {
     protected internal Result(bool isSuccess, Error error)

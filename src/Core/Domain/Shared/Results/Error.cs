@@ -1,4 +1,4 @@
-namespace Domain.Shared;
+namespace Domain.Shared.Results;
 
 public class Error {
     public static readonly Error None = new( string.Empty);

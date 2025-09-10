@@ -2,6 +2,7 @@ namespace Domain.Repositories;
 
 using Entities;
 using Enums;
+using Shared;
 
 public interface IMessageRepository : IRepository<Message>
 {
@@ -10,7 +11,7 @@ public interface IMessageRepository : IRepository<Message>
     /// <summary>
     /// Gets a paginated list of messages for a specific chat.
     /// </summary>
-    Task<IEnumerable<Message>> GetMessagesForChatAsync(Guid chatId, int page, int pageSize);
+    Task<PaginatedList<Message>> GetMessagesForChatAsync(Guid chatId, int page, int pageSize);
 
     Task CreateAsync(Message message);
 

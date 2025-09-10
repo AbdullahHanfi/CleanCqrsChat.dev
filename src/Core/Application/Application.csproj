@@ -7,11 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="DTOs\" />
-      <Folder Include="Features\Chats\" />
-      <Folder Include="Features\Messages\" />
-      <Folder Include="Features\Users\" />
-      <Folder Include="Handlers\" />
+      <Folder Include="DTOs\Message\" />
+      <Folder Include="Features\Chats\Commands\" />
+      <Folder Include="Features\Messages\Commands\" />
+      <Folder Include="Features\Messages\Handlers\" />
+      <Folder Include="Features\Messages\Queries\" />
+      <Folder Include="Features\Users\Commands\" />
+      <Folder Include="Features\Users\Handlers\" />
+      <Folder Include="Features\Users\Queries\" />
       <Folder Include="Mapping\" />
       <Folder Include="Validation\" />
     </ItemGroup>
@@ -20,6 +23,10 @@
       <PackageReference Include="AutoMapper" Version="15.0.1" />
       <PackageReference Include="FluentValidation" Version="12.0.0" />
       <PackageReference Include="MediatR" Version="13.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Domain\Domain.csproj" />
     </ItemGroup>
 
 </Project>

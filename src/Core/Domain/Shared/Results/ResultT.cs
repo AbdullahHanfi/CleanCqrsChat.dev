@@ -1,4 +1,4 @@
-namespace Domain.Shared;
+namespace Domain.Shared.Results;
 
 public class Result<TValue> : Result {
     private readonly TValue? _value;
