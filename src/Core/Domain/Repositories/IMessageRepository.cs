@@ -3,6 +3,7 @@ namespace Domain.Repositories;
 using Entities;
 using Enums;
 using Shared;
+using Shared.Collections;
 
 public interface IMessageRepository : IRepository<Message>
 {

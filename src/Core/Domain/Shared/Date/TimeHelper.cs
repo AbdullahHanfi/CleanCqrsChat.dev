@@ -1,4 +1,7 @@
-namespace Domain.Shared.DateTime;
+namespace Domain.Shared.Date;
+
+using System.Runtime.CompilerServices;
+using DateTime=System.DateTime;
 
 public static class TimeHelper
 {

@@ -1,7 +1,7 @@
 namespace Domain.Repositories;
 
 using Entities;
-using Shared;
+using Shared.Results;
 
 public interface IUserRepository {
     Task<Result<User>> GetByIdAsync(Guid id);

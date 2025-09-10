@@ -1,5 +1,9 @@
 namespace Domain.Shared.DateTime;
 
+using System.Collections.Concurrent;
+using System.Runtime.CompilerServices;
+using DateTime=System.DateTime;
+
 public static class TimezoneConverter
 {
     // Cache for timezone info to avoid repeated lookups
