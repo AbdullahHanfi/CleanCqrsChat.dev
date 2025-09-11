@@ -13,8 +13,10 @@ public class ChatHistoryDto {
     public DateTime CreatedAt { get; set; }
     public string Privacy { get; set; }
     public List<UserDto> Members { get; set; }
-    
-    public static ChatHistoryDto Create(Chat chat) {
+    private ChatHistoryDto() {}
+
+    public static ChatHistoryDto Create(Chat? chat) {
+        if (chat == null) return new();
         return new ChatHistoryDto
         {
             Id = chat.Id,
@@ -28,8 +30,11 @@ public class ChatHistoryDto {
             Members = UserDto.Create(chat.Members.ToList())
         };
     }
-    
-    public static List<ChatHistoryDto> Create(List<Chat> Chats) {
-        return Chats.Select(Create).ToList();
+
+    public static List<ChatHistoryDto> Create(List<Chat>? chats) {
+        if (chats == null || chats.Count == 0)
+            return new();
+
+        return chats.Select(Create).ToList();
     }
 }

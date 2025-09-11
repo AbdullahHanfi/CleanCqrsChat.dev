@@ -7,7 +7,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.20">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Scrutor" Version="6.1.0" />
+        <PackageReference Include="Serilog.AspNetCore" Version="8.0.3" />
+        <PackageReference Include="Serilog.Settings.Configuration" Version="8.0.4" />
+        <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="8.2.2" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2"/>
     </ItemGroup>
 
@@ -20,6 +27,9 @@
     <ItemGroup>
       <ProjectReference Include="..\..\Core\Application\Application.csproj" />
       <ProjectReference Include="..\..\Core\Domain\Domain.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Infrastructure.Identity\Infrastructure.Identity.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Infrastructure.Persistence\Infrastructure.Persistence.csproj" />
+      <ProjectReference Include="..\..\Infrastructure\Infrastructure.Shared\Infrastructure.Shared.csproj" />
     </ItemGroup>
 
     <ItemGroup>

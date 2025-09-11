@@ -1,4 +1,4 @@
-﻿namespace Infrastructure.Persistence;
+﻿namespace Infrastructure.Identity;
 
 public class Class1 {
 
