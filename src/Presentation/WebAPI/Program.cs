@@ -22,6 +22,7 @@ public class Program {
             .AddApplication()
             .AddInfrastructurePersistence(builder.Configuration)
             .AddInfrastructureIdentity(builder.Configuration);
+        
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();

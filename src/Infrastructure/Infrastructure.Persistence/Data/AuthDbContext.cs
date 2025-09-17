@@ -1,6 +1,7 @@
-namespace Infrastructure.Persistence.Data;
-
+using Infrastructure.Persistence.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDbContext(options);
+namespace Infrastructure.Persistence.Data;
+
+public class AuthDbContext(DbContextOptions<AuthDbContext> options) : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>(options);
