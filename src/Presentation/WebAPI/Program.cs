@@ -2,8 +2,9 @@ using Infrastructure.Persistence;
 
 namespace WebAPI;
 
+using Application;
 using Infrastructure.Identity;
-using Infrastructure.Identity.Helper;
+using Serilog;
 
 public class Program {
     public static void Main(string[] args) {
@@ -12,10 +13,15 @@ public class Program {
         // Add services to the container.
         // builder.Services.Scan();
         builder.Services.AddControllers();
-        builder.Services
-            .AddPersistence(builder.Configuration)
-            .AddInfraIdentity(builder.Configuration);
 
+        builder.Host.UseSerilog((context, services, configuration) => configuration
+            .ReadFrom.Configuration(context.Configuration)
+            .ReadFrom.Services(services));
+        
+        builder.Services
+            .AddApplication()
+            .AddInfrastructurePersistence(builder.Configuration)
+            .AddInfrastructureIdentity(builder.Configuration);
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
@@ -30,6 +36,7 @@ public class Program {
 
         app.UseHttpsRedirection();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
 

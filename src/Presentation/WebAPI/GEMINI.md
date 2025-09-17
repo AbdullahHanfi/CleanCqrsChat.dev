@@ -11,6 +11,7 @@ These rules ensure maintainability, safety, and developer velocity within a .NET
 
 ### 1 — Before Coding
 
+
 - **BP-1 (MUST)** Ask the user clarifying questions to resolve ambiguities.
 - **BP-2 (SHOULD)** Draft and confirm an approach for complex work.
 - **BP-3 (SHOULD)** If ≥ 2 approaches exist, list clear pros and cons.
